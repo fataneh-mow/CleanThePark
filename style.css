@@ -1,0 +1,103 @@
+/* 1. Page styling
+Full viewport height
+Gradient background
+Centered content
+Text shadows for readability
+
+2. Bin styling
+Rounded corners
+Semi-transparent background
+Positioned at bottom-right
+Scale animation on drop
+
+3. Trash styling
+Absolute positioning
+Cursor pointer
+Smooth transitions
+Checkpoint:
+
+The page should look like a colorful park with a visible bin. */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to top, #d5dee7 0%, #f5acac 0%, #a6ff96 100%);
+    font-family: 'Times New Roman', Times, serif;
+    height: 100vh;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+h1{
+    text-shadow: 2px 2px #115106;
+    color: #fff;
+    font-weight: bold;
+}
+
+h4{
+    color: #Fff;
+    text-shadow: 2px 2px #e88192;
+}
+
+:root{
+    --ui: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --title: "Fredoka", var(--ui);
+  }
+  
+h1.game-title { font-family: var(--title); font-weight: 700; font-size: 3rem; letter-spacing: -0.02em; }
+body, .ui-text { font-family: var(--ui); font-weight: 400; font-size: 16px; }
+.button { font-family: var(--title); }
+
+#bin {
+    position: fixed;           
+    bottom: 30px;              
+    right: 30px;               
+    font-size: 3rem;           
+    background: rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;       
+    padding: 15px 25px;        
+    transition: transform 0.3s ease-in-out; 
+}
+  
+#bin:hover {
+    cursor: pointer;
+}
+
+#bin.dropped {
+    transform: scale(1.2);     
+}
+  
+.trash-container{
+    position: hidden;
+}
+.trash {
+    position: absolute;   
+    /* margin: 4rem;   */
+    font-size: 2.5rem;         
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+  
+.trash:hover{
+    cursor:grab;
+}
+.trash:active {
+    cursor: grabbing;          
+    transform: scale(1.2);    
+}
+
+#bin {
+    transition: transform 0.3s ease;
+}
+  
+#bin.dropped {
+    transform: scale(1.2);
+}
+.cat-paw {
+    z-index: 1000;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
